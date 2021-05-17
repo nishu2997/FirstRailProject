@@ -1,0 +1,21 @@
+<div class="login-page">
+    <div class="login-page-title">
+        <p>Please Sign In</p>
+    </div>
+    <div class="login-page-form">
+        <%= form_with url: login_path, method: :post do |form|%>
+            <div class="login-form-error-msg <%= @valid == true ? "normal" : "error" %>"><%= @valid == false ? "username or password are incorrect": "" %></div>
+            <div class="login-form-field">
+                <%= form.label :"username" %><br>
+                <%= form.text_field :username %><br>
+            </div>
+            <div class="login-form-field">
+                <%= form.label :"password" %><br>
+                <%= form.password_field :password %><br>
+            </div>
+            <div class="login-form-submit-button">
+                <%= form.submit "Sign In" %>
+            </div>
+        <%end%>
+    </div>
+</div>

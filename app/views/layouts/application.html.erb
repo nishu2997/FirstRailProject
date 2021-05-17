@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>College Database</title>
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_pack_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+      <nav>
+        <div class="nav-left-part">
+          <div class="home-link">
+              <%= link_to "College Database", root_path%>
+          </div>
+          <div class="departments-link">
+              <%= link_to "Departments", departments_path%>
+          </div>
+          <div class="students-link">
+              <%= link_to "Students", students_path%>
+          </div>
+          <div class="courses-link">
+              <%= link_to "Courses", courses_path%>
+          </div>
+        </div>
+        <div class="nav-right-part">
+          <% if session[:current_user_id] == nil or (session[:current_user_id] != "admin" and 
+          Student.find_by(id: session[:current_user_id]) == nil) %>
+            <div class="login-link">
+                <%= link_to "Login", login_path%>
+            </div>
+          <% else %>
+            <div class="logged-in-user">
+              <p> logged in as</p>
+              <h3>
+                  <% if session[:current_user_id] == "admin" %>
+                      <%= "ADMIN"%>
+                  <% else %>
+                      <%= Student.find(session[:current_user_id])[:name].split(/ /)[0].upcase %>
+                  <% end %>
+              </h3>
+            </div>
+            <div class="logout-link">
+              <%= link_to "Logout", logout_path %>
+            </div>
+          <% end %>
+        </div>
+      </nav>
+    </header>
+    <main>
+     <%= yield %>
+    </main>
+  </body>
+</html>

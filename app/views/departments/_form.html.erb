@@ -1,0 +1,16 @@
+<%= form_with model: department do |form| %>
+    <div class="department-form-field">
+        <%= form.label :"Department Name" %><br>
+        <%= form.text_field :name %>
+    </div>
+    <div class="department-form-field">
+        <%= form.label :"Department Code" %><br>
+        <%= form.text_field :departmentCode %>
+        <% @department.errors.full_messages_for(:departmentCode).each do |message| %>
+            <div class="department-form-error-msg"><%= message %></div>
+        <% end %>
+    </div>
+    <div class="department-form-button">
+        <%= form.submit %>
+    </div>
+<% end %>

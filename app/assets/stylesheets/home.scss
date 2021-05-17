@@ -1,0 +1,28 @@
+.home-page {
+  width: 100%;
+  height: 350px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.home-page-title,
+.home-page-body {
+  max-width: 700px;
+}
+.home-page-title p {
+  font-size: 1.5em;
+  margin: 0px;
+  padding: 5px;
+}
+.home-page-body {
+  margin-top: 10px;
+}
+.home-page-body p {
+  font-size: 1em;
+  margin: 0px;
+  padding: 0px;
+  text-align: justify;
+  color: rgb(82, 80, 80);
+  font-style: italic;
+}

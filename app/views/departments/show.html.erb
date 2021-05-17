@@ -1,0 +1,18 @@
+<div class="department-show">
+    <div class="department-show-title">
+        <p>Department Details</p>
+    </div>
+    <div class="department-show-body">
+        <div class="department-show-department-name">
+            <p class="p-gray">Department Name</p>
+            <p><%= @department.name %></p>
+        </div>
+        <div class="department-show-department-code">
+            <p class="p-gray">Department Code</p>
+            <p><%= @department.departmentCode %></p>
+        </div>
+    </div>
+    <div class="department-show-footer">
+        <%= link_to "back", departments_path%>
+    </div>
+</div>

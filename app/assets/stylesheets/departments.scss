@@ -1,0 +1,184 @@
+.department-index {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.department-index ul {
+  width: 1000px;
+  margin: 20px 0 0 0;
+  padding: 0px;
+}
+.department-index li {
+  padding: 10px 20px 10px 20px;
+  list-style: none;
+  background-color: white;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  margin-bottom: 10px;
+}
+.department-index li p {
+  padding: 0px;
+  margin: 0px;
+}
+.department-index-li-link {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+  justify-items: center;
+  column-gap: 10px;
+}
+.department-index-li-link a {
+  color: rgb(18, 131, 165);
+  text-decoration: none;
+}
+.department-index-li-link .inactive a {
+  pointer-events: none;
+  color: gray;
+}
+.department-index-li-link a:hover {
+  cursor: pointer;
+  color: rgb(18, 113, 165);
+}
+.department-index-li.bg-dark {
+  margin-bottom: 10px;
+  background-color: rgb(33, 43, 59);
+}
+.department-index-li.bg-dark p {
+  color: white;
+}
+.department-index-new {
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 1000px;
+  height: 30px;
+}
+.department-index-new a {
+  border: none;
+  width: 150px;
+  height: 100%;
+  background-color: rgb(33, 43, 59);
+  color: white;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.department-index-new.inactive a {
+  pointer-events: none;
+  background-color: rgb(119, 116, 116);
+}
+.department-index-new a:hover {
+  cursor: pointer;
+}
+.department-show {
+  width: 100%;
+  background-color: white;
+  box-sizing: border-box;
+  padding: 10px 50px 10px 50px;
+}
+.department-show-title {
+  width: 100%;
+  margin-bottom: 20px;
+}
+.department-show-title p {
+  margin: 0px;
+  font-size: 1.5em;
+  padding: 5px;
+  box-sizing: border-box;
+}
+.department-show-body {
+  width: 500px;
+  margin-bottom: 50px;
+}
+.department-show-department-name,
+.department-show-department-code {
+  display: grid;
+  grid-template-columns: minmax(200px, 250px) 1fr;
+  margin-bottom: 5px;
+}
+.department-show-department-name p,
+.department-show-department-code p {
+  padding: 5px;
+  box-sizing: border-box;
+  margin: 0px;
+}
+.p-gray {
+  color: rgb(99, 97, 97);
+}
+.department-show-footer {
+  width: 70px;
+  height: 30px;
+  margin-bottom: 20px;
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: rgb(33, 43, 59);
+}
+.department-show-footer a {
+  color: white;
+  padding: 5px;
+  text-decoration: none;
+  outline: none;
+  padding: 5px;
+  margin: 0px;
+  box-sizing: border-box;
+  display: inline-block;
+}
+.department-show-footer a:hover {
+  cursor: pointer;
+}
+.department-new,
+.department-edit {
+  background-color: white;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.department-new-title,
+.department-edit-title {
+  margin-bottom: 20px;
+}
+.department-new-title p,
+.department-edit-title p {
+  font-size: 1.7em;
+  padding: 0px;
+  margin: 0px;
+}
+.department-new-form,
+.department-edit-form {
+  padding: 0px;
+  box-sizing: border-box;
+}
+.department-form-field {
+  margin-bottom: 15px;
+}
+.department-form-field input {
+  margin-top: 5px;
+  display: inline-block;
+  width: 250px;
+  height: 20px;
+}
+.department-form-field label {
+  color: rgb(109, 105, 105);
+}
+.department-form-button {
+  width: 150px;
+  height: 30px;
+  background-color: rgb(33, 43, 59);
+  margin-top: 30px;
+}
+.department-form-button input {
+  background-color: inherit;
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: white;
+}
+.department-form-error-msg {
+  margin-top: 5px;
+  font-size: small;
+  color: red;
+}

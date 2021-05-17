@@ -1,0 +1,130 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+body {
+  font-family: Arial, Helvetica, sans-serif, Georgia;
+  margin: 55px 0 0 0;
+  padding: 0px;
+  background-color: rgb(233, 230, 230);
+}
+header {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 55px;
+  z-index: 555;
+}
+nav {
+  width: 100%;
+  height: 100%;
+  display: grid;
+  grid-template-columns: 1fr 0.5fr;
+}
+.nav-left-part {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgb(33, 43, 59);
+  align-items: center;
+  column-gap: 25px;
+}
+.home-link {
+  max-height: 100%;
+}
+.home-link a {
+  text-decoration: none;
+  margin: 0px;
+  font-size: 1.4em;
+  color: white;
+  padding: 5px 5px 5px 15px;
+}
+.departments-link a,
+.students-link a,
+.courses-link a {
+  text-decoration: none;
+  color: gray;
+  font-size: 0.9em;
+}
+.home-link a:hover,
+.departments-link a:hover,
+.students-link a:hover,
+.courses-link a:hover {
+  cursor: pointer;
+  color: white;
+}
+.nav-right-part {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  background-color: rgb(33, 43, 59);
+  align-items: center;
+  justify-content: flex-end;
+  box-sizing: border-box;
+  padding-right: 50px;
+  column-gap: 30px;
+}
+.login-link,
+.logout-link {
+  height: 100%;
+  width: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.login-link a,
+.logout-link a {
+  text-decoration: none;
+  color: black;
+  font-size: 0.9em;
+  width: 100%;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: white;
+}
+.logged-in-user {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 1px;
+}
+.logged-in-user p,
+.logged-in-user h3 {
+  color: white;
+  padding: 0px;
+  margin: 0px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.logged-in-user p {
+  font-style: italic;
+  font-size: 0.9em;
+  color: rgb(184, 181, 181);
+}
+.logged-in-user h3 {
+  font-size: 1.3em;
+  font-weight: normal;
+}
+.login-link a:hover {
+  cursor: pointer;
+}
+main {
+  margin: 0px;
+  padding: 10px;
+  box-sizing: border-box;
+  width: 100%;
+}

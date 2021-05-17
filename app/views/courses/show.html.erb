@@ -1,0 +1,18 @@
+<div class="course-show">
+    <div class="course-show-title">
+        <p>Course Details</p>
+    </div>
+    <div class="course-show-body">
+        <div class="course-show-course-name">
+            <p class="p-gray">Course Name</p>
+            <p><%= @course.name %></p>
+        </div>
+        <div class="course-show-course-code">
+            <p class="p-gray">Course Code</p>
+            <p><%= @course.courseCode %></p>
+        </div>
+    </div>
+    <div class="course-show-footer">
+        <%= link_to "back", courses_path%>
+    </div>
+</div>

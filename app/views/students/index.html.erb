@@ -1,0 +1,26 @@
+<div class="student-index">
+    <ul class="student-index-ul">
+        <li class="student-index-li bg-dark">
+            <p>Student Name</p>
+            <p>Roll Number</p>
+        </li>
+        <% @students.each do |student| %>
+            <li class="student-index-li">
+                <p><%= student.name %></p>
+                <p><%= student.rollNumber %></p>
+                <div class="student-index-li-link">
+                    <%= link_to "show", student_path(student)%>
+                    <div class=<%= "#{(@current_user == student[:id] or @current_user == "admin")? "" : "inactive"}" %>> 
+                        <%= link_to "edit", edit_student_path(student)%>
+                    </div>
+                    <div class=<%= "#{(@current_user == student[:id] or @current_user == "admin")? "" : "inactive"}" %>>
+                        <%= link_to "delete", student_path(student), method: :delete %>
+                    </div>
+                </div>
+            </li>
+        <%end%>
+    </ul>
+    <div class="student-index-new <%= "#{@current_user == "admin" ? "" : "inactive"}" %>">
+        <%= link_to "New Student", new_student_path %>
+    </div>
+</div>

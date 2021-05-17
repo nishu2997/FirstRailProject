@@ -1,0 +1,55 @@
+.login-page {
+  background-color: white;
+  box-sizing: border-box;
+  padding: 20px;
+}
+.login-page-title {
+  margin-bottom: 20px;
+}
+.login-page-title p {
+  font-size: 1.7em;
+  padding: 0px;
+  margin: 0px;
+}
+.login-page-form {
+  padding: 0px;
+  box-sizing: border-box;
+}
+.login-form-field {
+  margin-bottom: 15px;
+}
+.login-form-field input {
+  margin-top: 5px;
+  display: inline-block;
+  width: 250px;
+  height: 20px;
+}
+.login-form-field label {
+  color: rgb(109, 105, 105);
+}
+.login-form-submit-button {
+  width: 80px;
+  height: 30px;
+  background-color: rgb(33, 43, 59);
+  margin-top: 30px;
+}
+.login-form-submit-button input {
+  background-color: inherit;
+  border: none;
+  width: 100%;
+  height: 100%;
+  display: block;
+  color: white;
+}
+.login-form-error-msg.error {
+  margin-bottom: 15px;
+  font-size: small;
+  color: red;
+  background-color: rgb(211, 207, 207);
+  box-sizing: border-box;
+  padding: 5px;
+  width: 260px;
+}
+.login-form-error-msg.normal {
+  background-color: white;
+}

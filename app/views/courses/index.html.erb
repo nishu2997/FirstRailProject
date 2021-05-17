@@ -1,0 +1,26 @@
+<div class="course-index">
+    <ul class="course-index-ul">
+        <li class="course-index-li bg-dark">
+            <p>Course Name</p>
+            <p>Course Code</p>
+        </li>
+        <% @courses.each do |course| %>
+            <li class="course-index-li">
+                <p><%= course.name %></p>
+                <p><%= course.courseCode %></p>
+                <div class="course-index-li-link">
+                    <%= link_to "show", course_path(course)%>
+                    <div class=<%= "#{@current_user == "admin"? "" : "inactive"}" %>>
+                        <%= link_to "edit", edit_course_path(course)%>
+                    </div>
+                    <div class=<%= "#{@current_user == "admin"? "" : "inactive"}" %>>
+                        <%= link_to "delete", course_path(course), method: :delete %>
+                    </div>
+                </div>
+            </li>
+        <%end%>
+    </ul>
+    <div class="course-index-new <%= "#{@current_user == "admin"? "" : "inactive"}" %>">
+        <%= link_to "New Course", new_course_path %>
+    </div>
+</div>

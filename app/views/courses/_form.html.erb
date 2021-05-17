@@ -1,0 +1,26 @@
+<%= form_with model: course do |form| %>
+    <div class="course-form-field">
+        <%= form.label :"Course Name" %><br>
+        <%= form.text_field :name %>
+    </div>
+    <div class="course-form-field">
+        <%= form.label :"Course Code" %><br>
+        <%= form.text_field :courseCode %>
+        <% @course.errors.full_messages_for(:courseCode).each do |message| %>
+            <div class="course-form-error-msg"><%= message %></div>
+        <% end %>
+    </div>
+    <div class="course-form-field">
+        <%= form.label :"Department Name" %><br>
+        <% departmentNames = []
+           @departments.each do |department|
+                arr = [department.name, department.id]
+                departmentNames.push(arr)
+           end
+        %>
+        <%= form.select :department_id, departmentNames %>
+    </div>
+    <div class="course-form-button">
+        <%= form.submit %>
+    </div>
+<% end %>

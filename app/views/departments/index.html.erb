@@ -1,0 +1,26 @@
+<div class="department-index">
+    <ul class="department-index-ul">
+        <li class="department-index-li bg-dark">
+            <p>Department Name</p>
+            <p>Department Code</p>
+        </li>
+        <% @departments.each do |department| %>
+            <li class="department-index-li">
+                <p><%= department.name %></p>
+                <p><%= department.departmentCode %></p>
+                <div class="department-index-li-link">
+                    <%= link_to "show", department_path(department)%>
+                    <div class=<%= "#{@current_user == "admin" ? "" : "inactive"}" %>>
+                        <%= link_to "edit", edit_department_path(department)%>
+                    </div>
+                    <div class=<%= "#{@current_user == "admin" ? "" : "inactive"}" %>>
+                        <%= link_to "delete", department_path(department), method: :delete %>
+                    </div>
+                </div>
+            </li>
+        <%end%>
+    </ul>
+    <div class="department-index-new <%= "#{@current_user == "admin" ? "" : "inactive"}" %>">
+        <%= link_to "New Department", new_department_path %>
+    </div>
+</div>

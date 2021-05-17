@@ -1,0 +1,44 @@
+<div class="student-show">
+    <div class="student-show-title">
+        <p>Student Details</p>
+    </div>
+    <div class="student-show-body">
+        <div class="student-show-student-details">
+            <div class="student-show-student-name">
+                <p class="p-gray">Student Name</p>
+                <p><%= @student.name %></p>
+            </div>
+            <div class="student-show-student-roll">
+                <p class="p-gray">Roll Number</p>
+                <p><%= @student.rollNumber %></p>
+            </div>
+        </div>
+        <div class="student-show-department-details">
+            <div class="student-show-department-name">
+                <p class="p-gray">Department Name</p>
+                <p><%= @department.name %></p>
+            </div>
+            <div class="student-show-department-code">
+                <p class="p-gray">Department Code</p>
+                <p><%= @department.departmentCode %></p>
+            </div>
+        </div>
+        <div class="student-show-course-details">
+            <ul class="student-show-ul">
+                <li class="student-show-li bg-dark">
+                    <p>Course Name</p>
+                    <p>Course Code</p>
+                </li>
+                <% @courses.each do |course| %>
+                    <li class="student-show-li">
+                        <p class="p-gray"><%= course.name %></p>
+                        <p><%= course.courseCode %></p>
+                    </li>
+                <%end%>
+            </ul>
+        </div>
+    </div>
+    <div class="student-show-footer">
+        <%= link_to "back", students_path%>
+    </div>
+</div>
