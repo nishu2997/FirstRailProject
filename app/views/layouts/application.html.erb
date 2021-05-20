@@ -26,6 +26,13 @@
           <div class="courses-link">
               <%= link_to "Courses", courses_path%>
           </div>
+          <% if session[:current_user_id] != nil and (session[:current_user_id] != "admin" and 
+          Student.find_by(id: session[:current_user_id]) != nil) %>
+            <% @student = Student.find_by(id: session[:current_user_id]) %>
+            <div class="enrolled-courses-link">
+              <%= link_to "Enrolled Courses", student_enrolls_path(@student)%>
+            </div>
+          <%end%>
         </div>
         <div class="nav-right-part">
           <% if session[:current_user_id] == nil or (session[:current_user_id] != "admin" and 

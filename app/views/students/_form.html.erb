@@ -3,22 +3,16 @@
         <%= form.label :"Student Name" %><br>
         <%= form.text_field :name %>
     </div>
-    <div class="student-form-field">
+    <div class="student-form-field <%= @courses!=nil ? "inactive" : "" %>">
         <%= form.label :"Roll Number" %><br>
         <%= form.text_field :rollNumber %>
         <% @student.errors.full_messages_for(:rollNumber).each do |message| %>
             <div class="student-form-error-msg"><%= message %></div>
         <% end %>
     </div>
-    <div class="student-form-field">
+    <div class="student-form-field <%= @courses!=nil ? "inactive" : "" %>">
         <%= form.label :"Department Name" %><br>
-        <% departmentNames = []
-           @departments.each do |department|
-                arr = [department.name, department.id]
-                departmentNames.push(arr)
-           end
-        %>
-        <%= form.select :department_id, departmentNames %>
+        <%= form.collection_select :department_id, @departments, :id, :name %>
     </div>
     <div class="student-form-button">
         <%= form.submit %>

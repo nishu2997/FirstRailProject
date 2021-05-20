@@ -13,6 +13,14 @@
         </div>
     </div>
     <div class="course-show-footer">
-        <%= link_to "back", courses_path%>
+        <div class="c-s-f-back-link">
+            <%= link_to "back", courses_path%>
+        </div>
+        <%if @student != nil %>
+            <div class="c-s-f-enroll-link 
+            <%= (Enroll.find_by(student_id: @student.id, course_id: @course.id) == nil and @course.department_id == @student.department_id)? "" : "inactive" %>">
+                <%= button_to "Enroll This Course", student_enrolls_path(@student), params: {enroll: {student_id: @student.id, course_id: @course.id}}%>
+            </div>
+        <%end%>
     </div>
 </div>

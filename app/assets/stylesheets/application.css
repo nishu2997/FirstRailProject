@@ -53,7 +53,8 @@ nav {
 }
 .departments-link a,
 .students-link a,
-.courses-link a {
+.courses-link a,
+.enrolled-courses-link a {
   text-decoration: none;
   color: gray;
   font-size: 0.9em;
@@ -61,7 +62,8 @@ nav {
 .home-link a:hover,
 .departments-link a:hover,
 .students-link a:hover,
-.courses-link a:hover {
+.courses-link a:hover,
+.enrolled-courses-link a:hover {
   cursor: pointer;
   color: white;
 }

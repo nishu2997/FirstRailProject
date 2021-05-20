@@ -1,0 +1,18 @@
+<div class="enroll-index">
+    <ul class="enroll-index-ul">
+        <li class="enroll-index-li bg-dark">
+            <p>Course Name</p>
+            <p>Course Code</p>
+        </li>
+        <% @courses.each do |course| %>
+            <li class="enroll-index-li">
+                <p><%= course.name %></p>
+                <p><%= course.courseCode %></p>
+                <div class="enroll-index-li-link">
+                    <%= link_to "show", course_path(course)%>
+                    <%= link_to "delete", student_enroll_path(@student.id, Enroll.find_by(student_id: @student.id, course_id: course.id).id), method: :delete %>
+                </div>
+            </li>
+        <%end%>
+    </ul>
+</div>

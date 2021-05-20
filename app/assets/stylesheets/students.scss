@@ -173,6 +173,9 @@
 .student-form-field {
   margin-bottom: 15px;
 }
+.student-form-field.inactive {
+  pointer-events: none;
+}
 .student-form-field input,
 .student-form-field select {
   margin-top: 5px;
@@ -186,6 +189,10 @@
   width: 255px;
 }
 .student-form-field label {
+  color: rgb(109, 105, 105);
+}
+.student-form-field.inactive input,
+.student-form-field.inactive select {
   color: rgb(109, 105, 105);
 }
 .student-form-button {
