@@ -2,6 +2,9 @@
     <div class="student-form-field">
         <%= form.label :"Student Name" %><br>
         <%= form.text_field :name %>
+        <% @student.errors.full_messages_for(:name).each do |message| %>
+            <div class="student-form-error-msg"><%= message %></div>
+        <% end %>
     </div>
     <div class="student-form-field <%= @courses!=nil ? "inactive" : "" %>">
         <%= form.label :"Roll Number" %><br>

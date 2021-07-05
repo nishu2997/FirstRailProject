@@ -26,17 +26,14 @@
           <div class="courses-link">
               <%= link_to "Courses", courses_path%>
           </div>
-          <% if session[:current_user_id] != nil and (session[:current_user_id] != "admin" and 
-          Student.find_by(id: session[:current_user_id]) != nil) %>
-            <% @student = Student.find_by(id: session[:current_user_id]) %>
+          <% if @current_user != nil and @current_user != "admin" %>
             <div class="enrolled-courses-link">
-              <%= link_to "Enrolled Courses", student_enrolls_path(@student)%>
+              <%= link_to "Enrolled Courses", student_enrolls_path(@current_user)%>
             </div>
           <%end%>
         </div>
         <div class="nav-right-part">
-          <% if session[:current_user_id] == nil or (session[:current_user_id] != "admin" and 
-          Student.find_by(id: session[:current_user_id]) == nil) %>
+          <% if @current_user == nil %>
             <div class="login-link">
                 <%= link_to "Login", login_path%>
             </div>
@@ -44,10 +41,10 @@
             <div class="logged-in-user">
               <p> logged in as</p>
               <h3>
-                  <% if session[:current_user_id] == "admin" %>
+                  <% if @current_user == "admin" %>
                       <%= "ADMIN"%>
                   <% else %>
-                      <%= Student.find(session[:current_user_id])[:name].split(/ /)[0].upcase %>
+                      <%= @current_user[:name].split(/ /)[0].upcase %>
                   <% end %>
               </h3>
             </div>

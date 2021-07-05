@@ -1,15 +1,10 @@
 class CoursesController < ApplicationController
   def index
     @courses = Course.all
-    @sess_val = session[:current_user_id]
-    @current_user = ((@sess_val != "admin" and Student.find_by(id: @sess_val) == nil) ? nil : @sess_val)
   end
 
   def show
     @course = Course.find(params[:id])
-    @sess_val = session[:current_user_id]
-    @current_user = ((@sess_val != "admin" and Student.find_by(id: @sess_val) == nil) ? nil : @sess_val)
-    @student = (@current_user != "admin") ? Student.find_by(id: @current_user): nil
   end
 
   def new

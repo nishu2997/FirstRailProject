@@ -15,7 +15,7 @@ class LoginController < ApplicationController
 
   private
     def require_params
-      params.permit(:username, :password)
+      params.permit(:authenticity_token, :username, :password)
     end
   
     def isEmpty

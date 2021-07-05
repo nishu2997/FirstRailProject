@@ -1,5 +1,6 @@
 class Department < ApplicationRecord
-    validates :departmentCode, uniqueness: {case_sensitive: false}
-    has_many :students
-    has_many :courses
+    validates :name, presence: true
+    validates :departmentCode, uniqueness: {case_sensitive: false}, presence: true
+    has_many :students, dependent: :destroy
+    has_many :courses, dependent: :destroy
 end

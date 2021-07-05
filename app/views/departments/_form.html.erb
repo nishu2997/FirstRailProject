@@ -2,6 +2,9 @@
     <div class="department-form-field">
         <%= form.label :"Department Name" %><br>
         <%= form.text_field :name %>
+        <% @department.errors.full_messages_for(:name).each do |message| %>
+            <div class="department-form-error-msg"><%= message %></div>
+        <% end %>
     </div>
     <div class="department-form-field">
         <%= form.label :"Department Code" %><br>

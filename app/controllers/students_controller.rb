@@ -1,9 +1,9 @@
 class StudentsController < ApplicationController
 
   def index
+    #puts session[:_csrf_token]
     @students = Student.all
-    @sess_val = session[:current_user_id]
-    @current_user = ((@sess_val != "admin" and Student.find_by(id: @sess_val) == nil) ? nil : @sess_val)
+    #render json: @students[0], content_type: "application/json", status: :forbidden
   end
 
   def show
@@ -48,6 +48,8 @@ class StudentsController < ApplicationController
   end
 
   def destroy
+    #puts verified_request?
+    #puts Base64.strict_decode64(session[:_csrf_token])
     @student = Student.find(params[:id])
     @student.destroy
     redirect_to students_path

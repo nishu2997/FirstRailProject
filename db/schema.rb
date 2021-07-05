@@ -34,6 +34,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_061808) do
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["course_id"], name: "index_enrolls_on_course_id"
+    t.index ["student_id", "course_id"], name: "index_enrolls_on_student_id_and_course_id"
     t.index ["student_id"], name: "index_enrolls_on_student_id"
   end
 
@@ -47,7 +48,7 @@ ActiveRecord::Schema.define(version: 2021_05_13_061808) do
   end
 
   create_table "students", force: :cascade do |t|
-    t.integer "department_id"
+    t.integer "department_id", null: false
     t.string "name"
     t.integer "rollNumber"
     t.datetime "created_at", precision: 6, null: false

@@ -25,7 +25,8 @@ class EnrollsController < ApplicationController
     if @enroll.save
       redirect_to courses_path
     else
-      render course_path(@enroll.course_id)
+      @course = Course.find(@enroll.course_id)
+      render "courses/show"
     end
   end
 

@@ -1,9 +1,7 @@
 class DepartmentsController < ApplicationController
+  
   def index
     @departments = Department.all
-    @sess_val = session[:current_user_id]
-    @current_user = ((@sess_val != "admin" and Student.find_by(id: @sess_val) == nil) ? nil : @sess_val)
-    puts session[:current_user_id]
   end
 
   def new

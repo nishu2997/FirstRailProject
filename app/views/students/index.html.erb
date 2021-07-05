@@ -10,10 +10,10 @@
                 <p><%= student.rollNumber %></p>
                 <div class="student-index-li-link">
                     <%= link_to "show", student_path(student)%>
-                    <div class=<%= "#{(@current_user == student[:id] or @current_user == "admin")? "" : "inactive"}" %>> 
+                    <div class=<%= "#{( (@current_user == "admin") || (@current_user!=nil && @current_user[:id] == student[:id]))? "" : "inactive"}" %>> 
                         <%= link_to "edit", edit_student_path(student)%>
                     </div>
-                    <div class=<%= "#{(@current_user == student[:id] or @current_user == "admin")? "" : "inactive"}" %>>
+                    <div class=<%= "#{( (@current_user == "admin") || (@current_user!=nil && @current_user[:id] == student[:id]))? "" : "inactive"}" %>>
                         <%= link_to "delete", student_path(student), method: :delete %>
                     </div>
                 </div>
